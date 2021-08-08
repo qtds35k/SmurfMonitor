@@ -15,20 +15,21 @@ Aims to monitor when in a week are smurfs most active
 
     - getPlayer1v1Stats
         - Provided steam_id, get rating and winrate from Rank api
-          `e.g., https://aoe2.net/api/nightbot/rank?leaderboard_id=3&steam_id=76561198189368841        老宋 50%`
-          `e.g., https://aoe2.net/api/nightbot/rank?leaderboard_id=3&steam_id=76561198350566117        妙禪 50%`
-        - Sample text: 🇹🇼 妙禪seafood (1309) Rank #6,766, has played 4,803 games with a 50% winrate, -1 streak, and 32 drops
-            - regex: (dddd) Rank #
-            - regex: with a with a dd% winrate
-        - Return int[2] -> dddd, dd
+            - E.g., `https://aoe2.net/api/nightbot/rank?leaderboard_id=3&steam_id=76561198189368841  老宋 50%`
+            - E.g., `https://aoe2.net/api/nightbot/rank?leaderboard_id=3&steam_id=76561198350566117  妙禪 50%`
+        - Return text: `🇹🇼 妙禪seafood (1309) Rank #6,766, has played 4,803 games with a 50% winrate, -1 streak, and 32 drops`
 
 - Parser
     - parseRanked1v1Players
       `"leaderboard_id": 3`
 
     - parseRatingAndWinrate
+        - From the returned text of Rank api, parse out rating and winrate of player
+        - Sample input text: `🇹🇼 妙禪seafood (1309) Rank #6,766, has played 4,803 games with a 50% winrate, -1 streak, and 32 drops`
+            - regex: `(dddd) Rank #`
+            - regex: `with a with a dd% winrate`
+        - Return int[2] -> dddd, dd
     
-
 - Analyzer
     - Get steam_id list with Filter
         `"rating" < 1500`
