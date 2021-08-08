@@ -21,7 +21,7 @@ Aims to monitor when in a week are smurfs most active
 
 - Parser
     - parseRanked1v1Players
-      `"leaderboard_id": 3`
+        - Filter only 1v1 Ranked games by specifying key/value: `"leaderboard_id": 3`
 
     - parseRatingAndWinrate
         - From the returned text of Rank api, parse out rating and winrate of player
