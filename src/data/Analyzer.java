@@ -1,5 +1,5 @@
 package data;
 
-public @interface Analyzer {
+public class Analyzer {
 
 }

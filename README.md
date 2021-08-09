@@ -1,4 +1,4 @@
-# SmurfMonitor
+# Smurf Monitor
 Aims to monitor when in a week are smurfs most active
 
 # Design
@@ -14,7 +14,7 @@ Aims to monitor when in a week are smurfs most active
         - Return whole json text
 
     - getPlayer1v1Stats
-        - Provided steam_id, get rating and winrate from Rank api
+        - Provided steam_id or profile_id, get player's ranked 1v1 info from Rank api
             - E.g., `https://aoe2.net/api/nightbot/rank?leaderboard_id=3&steam_id=76561198189368841  老宋 50%`
             - E.g., `https://aoe2.net/api/nightbot/rank?leaderboard_id=3&steam_id=76561198350566117  妙禪 50%`
         - Return text: `🇹🇼 妙禪seafood (1309) Rank #6,766, has played 4,803 games with a 50% winrate, -1 streak, and 32 drops`
@@ -29,7 +29,7 @@ Aims to monitor when in a week are smurfs most active
             - regex: `(dddd) Rank #`
             - regex: `with a with a dd% winrate`
         - Return int[2] -> dddd, dd
-    
+
 - Analyzer
     - Get steam_id list with Filter
         `"rating" < 1500`
