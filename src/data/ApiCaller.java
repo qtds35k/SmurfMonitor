@@ -50,7 +50,6 @@ public class ApiCaller {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inStream, Charset.forName("UTF-8")));
             String player1v1Info = readAll(reader);
-            System.out.println(player1v1Info);
             return player1v1Info;
         } finally {
             inStream.close();

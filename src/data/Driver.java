@@ -25,11 +25,11 @@ public class Driver {
             JSONArray players = matchInfo.getJSONArray("players");
             for (int i = 0; i < players.length(); i++) {
                 JSONObject playerInfo = players.getJSONObject(i);
-                String players1v1Stats = caller.getPlayers1v1Stats(playerInfo);
-                if (players1v1Stats == null) {
+                String player1v1Info = caller.getPlayers1v1Stats(playerInfo);
+                if (player1v1Info == null || player1v1Info.equalsIgnoreCase("Player not found")) {
                     continue;
                 }
-                int[] eloAndWinrate = parser.parseRatingAndWinrate(players1v1Stats);
+                int[] eloAndWinrate = parser.parseRatingAndWinrate(player1v1Info);
                 if (eloAndWinrate == null) {
                     continue;
                 }
