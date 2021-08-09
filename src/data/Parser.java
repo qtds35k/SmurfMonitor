@@ -23,7 +23,7 @@ public class Parser {
 
     public int[] parseRatingAndWinrate(String player1v1Info) {
         int[] result = new int[2];
-        Pattern RANKED_1V1_PATTERN = Pattern.compile("(\\d+).*Rank.*with a (\\d+)");
+        Pattern RANKED_1V1_PATTERN = Pattern.compile("\\((\\d+)\\).*Rank.*with a (\\d+)");
         Matcher m = RANKED_1V1_PATTERN.matcher(player1v1Info);
         if (m.find()) {
             result[0] = Integer.parseInt(m.group(1)); 

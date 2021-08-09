@@ -29,14 +29,14 @@ public class Driver {
                 if (player1v1Info == null || player1v1Info.equalsIgnoreCase("Player not found")) {
                     continue;
                 }
-                int[] eloAndWinrate = parser.parseRatingAndWinrate(player1v1Info);
-                if (eloAndWinrate == null) {
+                int[] ratingAndWinrate = parser.parseRatingAndWinrate(player1v1Info);
+                if (ratingAndWinrate == null) {
                     continue;
                 }
-                lastHourPlayerStats.add(eloAndWinrate);
+                lastHourPlayerStats.add(ratingAndWinrate);
+                System.out.println(player1v1Info);
+                System.out.println(ratingAndWinrate[0] + " " + ratingAndWinrate[1]);
             }
         }
-        
-        
     }
 }

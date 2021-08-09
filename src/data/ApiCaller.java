@@ -8,7 +8,6 @@ import java.io.Reader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
