@@ -11,10 +11,10 @@ import org.json.JSONObject;
 public class Driver {
     public static void main(String[] args) throws IOException {
         long lastHourTimestamp = Instant.now().toEpochMilli() / 1000 - 3600;
-        String urlMatches = "https://aoe2.net/api/matches?game=aoe2de&count=50&since=" + lastHourTimestamp;
+        String urlMatches = "https://aoe2.net/api/matches?game=aoe2de&count=1000&since=" + lastHourTimestamp;
 
         ApiCaller caller = new ApiCaller();
-        JSONArray lastHourMatches = caller.getLastHourMatches(urlMatches);
+        JSONArray lastHourMatches = caller.getJsonFromAoe2Net(urlMatches);
 
         Parser parser = new Parser();
         List<JSONObject> filteredMatches = parser.parseRanked1v1Players(lastHourMatches);
